@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Form</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href='https://fonts.googleapis.com/css?family=Overpass' rel='stylesheet'>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <style>
+
+    .my-heading{
+  
+      margin-left: 2%;
+      margin-top: 5%;
+      font-size: 70px;
+      font-weight: bold;
+      font-family: 'Overpass';
+    }
+
+    body{
+      background-image: url("https://camo.githubusercontent.com/e6a446f00945d7b3043672bb7f552dad4c2e876b2eefd8122b48e606cdf879d7/68747470733a2f2f63646e2e61637469766573746174652e636f6d2f77702d636f6e74656e742f75706c6f6164732f323031382f31302f6d616368696e652d6c6561726e696e672d6865616c7468636172652d626c6f672d6865726f2d31323030783739392e6a7067");
+    }
+
+
+  </style>
+
+</head>
+
+
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <!-- <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li> -->
+        <li class="nav-item" style = "font-weight: 600;">
+          <a class="nav-link" href="/heartdisease">Heart Disease</a>
+        </li>
+        <li class="nav-item" style = "font-weight: 600;">
+          <a class="nav-link" href="/liverdisease">Liver Disease</a>
+        </li>
+        <li class="nav-item" style = "font-weight: 600;">
+          <a class="nav-link" href="/breastcancer">Breast Cancer</a>
+        </li>
+      </ul>
+    </div>
+
+  </nav>
+
+  
+  <div class = "heading">
+    <h1 class="my-heading">Health Proctor</h1>
+    
+    <hr class="my-5">
+  </div>
+  <br>
+
+  <h3 style = "margin-left: 3%">Tell me the symptoms you are facing : </h3>
+  <form action="{{url_for('predict')}}" method="post" style= "font-size: 20px; margin-left: 3%;">
+    <br>
+    <br>
+    <select name= "op1">
+    {% for ele in List %}
+    <option value= "{{ele}}" SELECTED>{{ele}}</option>"
+    {% endfor %}
+    </select>
+    
+
+    <select name= "op2", style="margin-left: 7%">
+    {% for ele in List %}
+    <option value= "{{ele}}" SELECTED>{{ele}}</option>"
+    {% endfor %}
+    </select>
+    
+    <select name= "op3", style="margin-left: 7%">
+    {% for ele in List %}
+    <option value= "{{ele}}" SELECTED>{{ele}}</option>"
+    {% endfor %}
+    </select>
+    <br>
+    <br>
+    <input type="submit" name="" value="Submit" class = "btn btn-success" style=" font-weight: 400; font-family: 'Open Sans', Helvetica; margin-left: 43%">
+  </form>
+
+  
+</body>
+</html>
